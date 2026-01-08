@@ -40,7 +40,7 @@ class StorageProfilesAzureResource(SyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/vra_iaas-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/imtrinity94/vra-iaas-mcp-python#accessing-raw-response-data-eg-headers
         """
         return StorageProfilesAzureResourceWithRawResponse(self)
 
@@ -49,7 +49,7 @@ class StorageProfilesAzureResource(SyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/vra_iaas-python#with_streaming_response
+        For more information, see https://www.github.com/imtrinity94/vra-iaas-mcp-python#with_streaming_response
         """
         return StorageProfilesAzureResourceWithStreamingResponse(self)
 
@@ -378,7 +378,7 @@ class AsyncStorageProfilesAzureResource(AsyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/vra_iaas-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/imtrinity94/vra-iaas-mcp-python#accessing-raw-response-data-eg-headers
         """
         return AsyncStorageProfilesAzureResourceWithRawResponse(self)
 
@@ -387,7 +387,7 @@ class AsyncStorageProfilesAzureResource(AsyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/vra_iaas-python#with_streaming_response
+        For more information, see https://www.github.com/imtrinity94/vra-iaas-mcp-python#with_streaming_response
         """
         return AsyncStorageProfilesAzureResourceWithStreamingResponse(self)
 

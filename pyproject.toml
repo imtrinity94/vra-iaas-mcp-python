@@ -1,6 +1,6 @@
 [project]
 name = "vra_iaas"
-version = "0.0.1"
+version = "0.0.2"
 description = "The official Python library for the vra_iaas API"
 dynamic = ["readme"]
 license = "Apache-2.0"
@@ -37,8 +37,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/stainless-sdks/vra_iaas-python"
-Repository = "https://github.com/stainless-sdks/vra_iaas-python"
+Homepage = "https://github.com/imtrinity94/vra-iaas-mcp-python"
+Repository = "https://github.com/imtrinity94/vra-iaas-mcp-python"
 
 [project.optional-dependencies]
 aiohttp = ["aiohttp", "httpx_aiohttp>=0.1.9"]
@@ -112,7 +112,7 @@ path = "README.md"
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
 # replace relative links with absolute links
 pattern = '\[(.+?)\]\(((?!https?://)\S+?)\)'
-replacement = '[\1](https://github.com/stainless-sdks/vra_iaas-python/tree/main/\g<2>)'
+replacement = '[\1](https://github.com/imtrinity94/vra-iaas-mcp-python/tree/main/\g<2>)'
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
