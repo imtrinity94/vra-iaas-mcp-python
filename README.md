@@ -25,12 +25,9 @@ The REST API documentation can be found on [www.vmware.com](https://www.vmware.c
 ## Installation
 
 ```sh
-# install from the production repo
-pip install git+ssh://git@github.com/imtrinity94/vra-iaas-mcp-python.git
+# install from PyPI
+pip install vra_iaas
 ```
-
-> [!NOTE]
-> Once this package is [published to PyPI](https://www.stainless.com/docs/guides/publish), this will become: `pip install vra_iaas`
 
 ## Usage
 
@@ -88,8 +85,8 @@ By default, the async client uses `httpx` for HTTP requests. However, for improv
 You can enable this by installing `aiohttp`:
 
 ```sh
-# install from the production repo
-pip install 'vra_iaas[aiohttp] @ git+ssh://git@github.com/imtrinity94/vra-iaas-mcp-python.git'
+# install from PyPI
+pip install vra_iaas[aiohttp]
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
