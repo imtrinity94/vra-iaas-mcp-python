@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestRegionEnumeration:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         region_enumeration = client.iaas.api.cloud_accounts.region_enumeration.retrieve(
@@ -29,7 +29,7 @@ class TestRegionEnumeration:
         )
         assert_matches_type(RegionEnumerationRetrieveResponse, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts.region_enumeration.with_raw_response.retrieve(
@@ -42,7 +42,7 @@ class TestRegionEnumeration:
         region_enumeration = response.parse()
         assert_matches_type(RegionEnumerationRetrieveResponse, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts.region_enumeration.with_streaming_response.retrieve(
@@ -57,7 +57,7 @@ class TestRegionEnumeration:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -66,7 +66,7 @@ class TestRegionEnumeration:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_region_enumeration(self, client: VraIaas) -> None:
         region_enumeration = client.iaas.api.cloud_accounts.region_enumeration.region_enumeration(
@@ -78,7 +78,7 @@ class TestRegionEnumeration:
         )
         assert_matches_type(RequestTracker, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_region_enumeration_with_all_params(self, client: VraIaas) -> None:
         region_enumeration = client.iaas.api.cloud_accounts.region_enumeration.region_enumeration(
@@ -97,7 +97,7 @@ class TestRegionEnumeration:
         )
         assert_matches_type(RequestTracker, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_region_enumeration(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts.region_enumeration.with_raw_response.region_enumeration(
@@ -113,7 +113,7 @@ class TestRegionEnumeration:
         region_enumeration = response.parse()
         assert_matches_type(RequestTracker, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_region_enumeration(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts.region_enumeration.with_streaming_response.region_enumeration(
@@ -137,7 +137,7 @@ class TestAsyncRegionEnumeration:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         region_enumeration = await async_client.iaas.api.cloud_accounts.region_enumeration.retrieve(
@@ -146,7 +146,7 @@ class TestAsyncRegionEnumeration:
         )
         assert_matches_type(RegionEnumerationRetrieveResponse, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts.region_enumeration.with_raw_response.retrieve(
@@ -159,7 +159,7 @@ class TestAsyncRegionEnumeration:
         region_enumeration = await response.parse()
         assert_matches_type(RegionEnumerationRetrieveResponse, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts.region_enumeration.with_streaming_response.retrieve(
@@ -174,7 +174,7 @@ class TestAsyncRegionEnumeration:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -183,7 +183,7 @@ class TestAsyncRegionEnumeration:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_region_enumeration(self, async_client: AsyncVraIaas) -> None:
         region_enumeration = await async_client.iaas.api.cloud_accounts.region_enumeration.region_enumeration(
@@ -195,7 +195,7 @@ class TestAsyncRegionEnumeration:
         )
         assert_matches_type(RequestTracker, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_region_enumeration_with_all_params(self, async_client: AsyncVraIaas) -> None:
         region_enumeration = await async_client.iaas.api.cloud_accounts.region_enumeration.region_enumeration(
@@ -214,7 +214,7 @@ class TestAsyncRegionEnumeration:
         )
         assert_matches_type(RequestTracker, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_region_enumeration(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts.region_enumeration.with_raw_response.region_enumeration(
@@ -230,7 +230,7 @@ class TestAsyncRegionEnumeration:
         region_enumeration = await response.parse()
         assert_matches_type(RequestTracker, region_enumeration, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_region_enumeration(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts.region_enumeration.with_streaming_response.region_enumeration(

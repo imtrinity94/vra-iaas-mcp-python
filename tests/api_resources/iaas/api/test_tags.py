@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestTags:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: VraIaas) -> None:
         tag = client.iaas.api.tags.create(
@@ -28,7 +28,7 @@ class TestTags:
         )
         assert_matches_type(Tag, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: VraIaas) -> None:
         tag = client.iaas.api.tags.create(
@@ -38,7 +38,7 @@ class TestTags:
         )
         assert_matches_type(Tag, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: VraIaas) -> None:
         response = client.iaas.api.tags.with_raw_response.create(
@@ -50,7 +50,7 @@ class TestTags:
         tag = response.parse()
         assert_matches_type(Tag, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: VraIaas) -> None:
         with client.iaas.api.tags.with_streaming_response.create(
@@ -64,13 +64,13 @@ class TestTags:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: VraIaas) -> None:
         tag = client.iaas.api.tags.list()
         assert_matches_type(TagListResponse, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: VraIaas) -> None:
         tag = client.iaas.api.tags.list(
@@ -83,7 +83,7 @@ class TestTags:
         )
         assert_matches_type(TagListResponse, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: VraIaas) -> None:
         response = client.iaas.api.tags.with_raw_response.list()
@@ -93,7 +93,7 @@ class TestTags:
         tag = response.parse()
         assert_matches_type(TagListResponse, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: VraIaas) -> None:
         with client.iaas.api.tags.with_streaming_response.list() as response:
@@ -105,7 +105,7 @@ class TestTags:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         tag = client.iaas.api.tags.delete(
@@ -113,7 +113,7 @@ class TestTags:
         )
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete_with_all_params(self, client: VraIaas) -> None:
         tag = client.iaas.api.tags.delete(
@@ -123,7 +123,7 @@ class TestTags:
         )
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.tags.with_raw_response.delete(
@@ -135,7 +135,7 @@ class TestTags:
         tag = response.parse()
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.tags.with_streaming_response.delete(
@@ -149,7 +149,7 @@ class TestTags:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -157,13 +157,13 @@ class TestTags:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_tags_usage(self, client: VraIaas) -> None:
         tag = client.iaas.api.tags.tags_usage()
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_tags_usage_with_all_params(self, client: VraIaas) -> None:
         tag = client.iaas.api.tags.tags_usage(
@@ -172,7 +172,7 @@ class TestTags:
         )
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_tags_usage(self, client: VraIaas) -> None:
         response = client.iaas.api.tags.with_raw_response.tags_usage()
@@ -182,7 +182,7 @@ class TestTags:
         tag = response.parse()
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_tags_usage(self, client: VraIaas) -> None:
         with client.iaas.api.tags.with_streaming_response.tags_usage() as response:
@@ -200,7 +200,7 @@ class TestAsyncTags:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncVraIaas) -> None:
         tag = await async_client.iaas.api.tags.create(
@@ -208,7 +208,7 @@ class TestAsyncTags:
         )
         assert_matches_type(Tag, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncVraIaas) -> None:
         tag = await async_client.iaas.api.tags.create(
@@ -218,7 +218,7 @@ class TestAsyncTags:
         )
         assert_matches_type(Tag, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.tags.with_raw_response.create(
@@ -230,7 +230,7 @@ class TestAsyncTags:
         tag = await response.parse()
         assert_matches_type(Tag, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.tags.with_streaming_response.create(
@@ -244,13 +244,13 @@ class TestAsyncTags:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncVraIaas) -> None:
         tag = await async_client.iaas.api.tags.list()
         assert_matches_type(TagListResponse, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncVraIaas) -> None:
         tag = await async_client.iaas.api.tags.list(
@@ -263,7 +263,7 @@ class TestAsyncTags:
         )
         assert_matches_type(TagListResponse, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.tags.with_raw_response.list()
@@ -273,7 +273,7 @@ class TestAsyncTags:
         tag = await response.parse()
         assert_matches_type(TagListResponse, tag, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.tags.with_streaming_response.list() as response:
@@ -285,7 +285,7 @@ class TestAsyncTags:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         tag = await async_client.iaas.api.tags.delete(
@@ -293,7 +293,7 @@ class TestAsyncTags:
         )
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete_with_all_params(self, async_client: AsyncVraIaas) -> None:
         tag = await async_client.iaas.api.tags.delete(
@@ -303,7 +303,7 @@ class TestAsyncTags:
         )
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.tags.with_raw_response.delete(
@@ -315,7 +315,7 @@ class TestAsyncTags:
         tag = await response.parse()
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.tags.with_streaming_response.delete(
@@ -329,7 +329,7 @@ class TestAsyncTags:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -337,13 +337,13 @@ class TestAsyncTags:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_tags_usage(self, async_client: AsyncVraIaas) -> None:
         tag = await async_client.iaas.api.tags.tags_usage()
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_tags_usage_with_all_params(self, async_client: AsyncVraIaas) -> None:
         tag = await async_client.iaas.api.tags.tags_usage(
@@ -352,7 +352,7 @@ class TestAsyncTags:
         )
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_tags_usage(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.tags.with_raw_response.tags_usage()
@@ -362,7 +362,7 @@ class TestAsyncTags:
         tag = await response.parse()
         assert tag is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_tags_usage(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.tags.with_streaming_response.tags_usage() as response:

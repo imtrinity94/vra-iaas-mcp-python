@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestCloudAccountsGcp:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.retrieve(
@@ -29,7 +29,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(CloudAccountGcp, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.retrieve(
@@ -38,7 +38,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(CloudAccountGcp, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_gcp.with_raw_response.retrieve(
@@ -50,7 +50,7 @@ class TestCloudAccountsGcp:
         cloud_accounts_gcp = response.parse()
         assert_matches_type(CloudAccountGcp, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_gcp.with_streaming_response.retrieve(
@@ -64,7 +64,7 @@ class TestCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -72,7 +72,7 @@ class TestCloudAccountsGcp:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.update(
@@ -92,7 +92,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.update(
@@ -120,7 +120,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_gcp.with_raw_response.update(
@@ -144,7 +144,7 @@ class TestCloudAccountsGcp:
         cloud_accounts_gcp = response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_gcp.with_streaming_response.update(
@@ -170,7 +170,7 @@ class TestCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -190,7 +190,7 @@ class TestCloudAccountsGcp:
                 ],
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.delete(
@@ -199,7 +199,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_gcp.with_raw_response.delete(
@@ -212,7 +212,7 @@ class TestCloudAccountsGcp:
         cloud_accounts_gcp = response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_gcp.with_streaming_response.delete(
@@ -227,7 +227,7 @@ class TestCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -236,7 +236,7 @@ class TestCloudAccountsGcp:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_cloud_accounts_gcp(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.cloud_accounts_gcp(
@@ -255,7 +255,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_cloud_accounts_gcp_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.cloud_accounts_gcp(
@@ -283,7 +283,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_cloud_accounts_gcp(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_gcp.with_raw_response.cloud_accounts_gcp(
@@ -306,7 +306,7 @@ class TestCloudAccountsGcp:
         cloud_accounts_gcp = response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_cloud_accounts_gcp(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_gcp.with_streaming_response.cloud_accounts_gcp(
@@ -331,7 +331,7 @@ class TestCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_private_image_enumeration(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.private_image_enumeration(
@@ -339,7 +339,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_private_image_enumeration_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.private_image_enumeration(
@@ -348,7 +348,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_private_image_enumeration(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_gcp.with_raw_response.private_image_enumeration(
@@ -360,7 +360,7 @@ class TestCloudAccountsGcp:
         cloud_accounts_gcp = response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_private_image_enumeration(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_gcp.with_streaming_response.private_image_enumeration(
@@ -374,7 +374,7 @@ class TestCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_private_image_enumeration(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -382,7 +382,7 @@ class TestCloudAccountsGcp:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_region_enumeration(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.region_enumeration(
@@ -390,7 +390,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_region_enumeration_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.region_enumeration(
@@ -403,7 +403,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_region_enumeration(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_gcp.with_raw_response.region_enumeration(
@@ -415,7 +415,7 @@ class TestCloudAccountsGcp:
         cloud_accounts_gcp = response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_region_enumeration(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_gcp.with_streaming_response.region_enumeration(
@@ -429,13 +429,13 @@ class TestCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_cloud_accounts_gcp(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.retrieve_cloud_accounts_gcp()
         assert_matches_type(CloudAccountsGcpRetrieveCloudAccountsGcpResponse, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_cloud_accounts_gcp_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_gcp = client.iaas.api.cloud_accounts_gcp.retrieve_cloud_accounts_gcp(
@@ -445,7 +445,7 @@ class TestCloudAccountsGcp:
         )
         assert_matches_type(CloudAccountsGcpRetrieveCloudAccountsGcpResponse, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_cloud_accounts_gcp(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_gcp.with_raw_response.retrieve_cloud_accounts_gcp()
@@ -455,7 +455,7 @@ class TestCloudAccountsGcp:
         cloud_accounts_gcp = response.parse()
         assert_matches_type(CloudAccountsGcpRetrieveCloudAccountsGcpResponse, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_cloud_accounts_gcp(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_gcp.with_streaming_response.retrieve_cloud_accounts_gcp() as response:
@@ -473,7 +473,7 @@ class TestAsyncCloudAccountsGcp:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.retrieve(
@@ -481,7 +481,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(CloudAccountGcp, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.retrieve(
@@ -490,7 +490,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(CloudAccountGcp, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_gcp.with_raw_response.retrieve(
@@ -502,7 +502,7 @@ class TestAsyncCloudAccountsGcp:
         cloud_accounts_gcp = await response.parse()
         assert_matches_type(CloudAccountGcp, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_gcp.with_streaming_response.retrieve(
@@ -516,7 +516,7 @@ class TestAsyncCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -524,7 +524,7 @@ class TestAsyncCloudAccountsGcp:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.update(
@@ -544,7 +544,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.update(
@@ -572,7 +572,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_gcp.with_raw_response.update(
@@ -596,7 +596,7 @@ class TestAsyncCloudAccountsGcp:
         cloud_accounts_gcp = await response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_gcp.with_streaming_response.update(
@@ -622,7 +622,7 @@ class TestAsyncCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -642,7 +642,7 @@ class TestAsyncCloudAccountsGcp:
                 ],
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.delete(
@@ -651,7 +651,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_gcp.with_raw_response.delete(
@@ -664,7 +664,7 @@ class TestAsyncCloudAccountsGcp:
         cloud_accounts_gcp = await response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_gcp.with_streaming_response.delete(
@@ -679,7 +679,7 @@ class TestAsyncCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -688,7 +688,7 @@ class TestAsyncCloudAccountsGcp:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_cloud_accounts_gcp(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.cloud_accounts_gcp(
@@ -707,7 +707,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_cloud_accounts_gcp_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.cloud_accounts_gcp(
@@ -735,7 +735,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_cloud_accounts_gcp(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_gcp.with_raw_response.cloud_accounts_gcp(
@@ -758,7 +758,7 @@ class TestAsyncCloudAccountsGcp:
         cloud_accounts_gcp = await response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_cloud_accounts_gcp(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_gcp.with_streaming_response.cloud_accounts_gcp(
@@ -783,7 +783,7 @@ class TestAsyncCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_private_image_enumeration(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.private_image_enumeration(
@@ -791,7 +791,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_private_image_enumeration_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.private_image_enumeration(
@@ -800,7 +800,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_private_image_enumeration(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_gcp.with_raw_response.private_image_enumeration(
@@ -812,7 +812,7 @@ class TestAsyncCloudAccountsGcp:
         cloud_accounts_gcp = await response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_private_image_enumeration(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_gcp.with_streaming_response.private_image_enumeration(
@@ -826,7 +826,7 @@ class TestAsyncCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_private_image_enumeration(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -834,7 +834,7 @@ class TestAsyncCloudAccountsGcp:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_region_enumeration(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.region_enumeration(
@@ -842,7 +842,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_region_enumeration_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.region_enumeration(
@@ -855,7 +855,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_region_enumeration(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_gcp.with_raw_response.region_enumeration(
@@ -867,7 +867,7 @@ class TestAsyncCloudAccountsGcp:
         cloud_accounts_gcp = await response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_region_enumeration(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_gcp.with_streaming_response.region_enumeration(
@@ -881,13 +881,13 @@ class TestAsyncCloudAccountsGcp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_cloud_accounts_gcp(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.retrieve_cloud_accounts_gcp()
         assert_matches_type(CloudAccountsGcpRetrieveCloudAccountsGcpResponse, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_cloud_accounts_gcp_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_gcp = await async_client.iaas.api.cloud_accounts_gcp.retrieve_cloud_accounts_gcp(
@@ -897,7 +897,7 @@ class TestAsyncCloudAccountsGcp:
         )
         assert_matches_type(CloudAccountsGcpRetrieveCloudAccountsGcpResponse, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_cloud_accounts_gcp(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_gcp.with_raw_response.retrieve_cloud_accounts_gcp()
@@ -907,7 +907,7 @@ class TestAsyncCloudAccountsGcp:
         cloud_accounts_gcp = await response.parse()
         assert_matches_type(CloudAccountsGcpRetrieveCloudAccountsGcpResponse, cloud_accounts_gcp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_cloud_accounts_gcp(self, async_client: AsyncVraIaas) -> None:
         async with (

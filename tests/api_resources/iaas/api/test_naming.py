@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestNaming:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: VraIaas) -> None:
         naming = client.iaas.api.naming.create(
@@ -28,7 +28,7 @@ class TestNaming:
         )
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: VraIaas) -> None:
         naming = client.iaas.api.naming.create(
@@ -72,7 +72,7 @@ class TestNaming:
         )
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: VraIaas) -> None:
         response = client.iaas.api.naming.with_raw_response.create(
@@ -84,7 +84,7 @@ class TestNaming:
         naming = response.parse()
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: VraIaas) -> None:
         with client.iaas.api.naming.with_streaming_response.create(
@@ -98,7 +98,7 @@ class TestNaming:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         naming = client.iaas.api.naming.retrieve(
@@ -107,7 +107,7 @@ class TestNaming:
         )
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.naming.with_raw_response.retrieve(
@@ -120,7 +120,7 @@ class TestNaming:
         naming = response.parse()
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.naming.with_streaming_response.retrieve(
@@ -135,7 +135,7 @@ class TestNaming:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -144,7 +144,7 @@ class TestNaming:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: VraIaas) -> None:
         naming = client.iaas.api.naming.list(
@@ -152,7 +152,7 @@ class TestNaming:
         )
         assert_matches_type(NamingListResponse, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: VraIaas) -> None:
         response = client.iaas.api.naming.with_raw_response.list(
@@ -164,7 +164,7 @@ class TestNaming:
         naming = response.parse()
         assert_matches_type(NamingListResponse, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: VraIaas) -> None:
         with client.iaas.api.naming.with_streaming_response.list(
@@ -178,7 +178,7 @@ class TestNaming:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         naming = client.iaas.api.naming.delete(
@@ -187,7 +187,7 @@ class TestNaming:
         )
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.naming.with_raw_response.delete(
@@ -200,7 +200,7 @@ class TestNaming:
         naming = response.parse()
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.naming.with_streaming_response.delete(
@@ -215,7 +215,7 @@ class TestNaming:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -230,7 +230,7 @@ class TestAsyncNaming:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncVraIaas) -> None:
         naming = await async_client.iaas.api.naming.create(
@@ -238,7 +238,7 @@ class TestAsyncNaming:
         )
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncVraIaas) -> None:
         naming = await async_client.iaas.api.naming.create(
@@ -282,7 +282,7 @@ class TestAsyncNaming:
         )
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.naming.with_raw_response.create(
@@ -294,7 +294,7 @@ class TestAsyncNaming:
         naming = await response.parse()
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.naming.with_streaming_response.create(
@@ -308,7 +308,7 @@ class TestAsyncNaming:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         naming = await async_client.iaas.api.naming.retrieve(
@@ -317,7 +317,7 @@ class TestAsyncNaming:
         )
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.naming.with_raw_response.retrieve(
@@ -330,7 +330,7 @@ class TestAsyncNaming:
         naming = await response.parse()
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.naming.with_streaming_response.retrieve(
@@ -345,7 +345,7 @@ class TestAsyncNaming:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -354,7 +354,7 @@ class TestAsyncNaming:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncVraIaas) -> None:
         naming = await async_client.iaas.api.naming.list(
@@ -362,7 +362,7 @@ class TestAsyncNaming:
         )
         assert_matches_type(NamingListResponse, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.naming.with_raw_response.list(
@@ -374,7 +374,7 @@ class TestAsyncNaming:
         naming = await response.parse()
         assert_matches_type(NamingListResponse, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.naming.with_streaming_response.list(
@@ -388,7 +388,7 @@ class TestAsyncNaming:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         naming = await async_client.iaas.api.naming.delete(
@@ -397,7 +397,7 @@ class TestAsyncNaming:
         )
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.naming.with_raw_response.delete(
@@ -410,7 +410,7 @@ class TestAsyncNaming:
         naming = await response.parse()
         assert_matches_type(CustomNaming, naming, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.naming.with_streaming_response.delete(
@@ -425,7 +425,7 @@ class TestAsyncNaming:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):

@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestCloudAccountsNsxV:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.retrieve(
@@ -29,7 +29,7 @@ class TestCloudAccountsNsxV:
         )
         assert_matches_type(CloudAccountNsxV, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.retrieve(
@@ -38,7 +38,7 @@ class TestCloudAccountsNsxV:
         )
         assert_matches_type(CloudAccountNsxV, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_nsx_v.with_raw_response.retrieve(
@@ -50,7 +50,7 @@ class TestCloudAccountsNsxV:
         cloud_accounts_nsx_v = response.parse()
         assert_matches_type(CloudAccountNsxV, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.retrieve(
@@ -64,7 +64,7 @@ class TestCloudAccountsNsxV:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -72,7 +72,7 @@ class TestCloudAccountsNsxV:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.update(
@@ -86,7 +86,7 @@ class TestCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.update(
@@ -112,7 +112,7 @@ class TestCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_nsx_v.with_raw_response.update(
@@ -130,7 +130,7 @@ class TestCloudAccountsNsxV:
         cloud_accounts_nsx_v = response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.update(
@@ -150,7 +150,7 @@ class TestCloudAccountsNsxV:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -164,7 +164,7 @@ class TestCloudAccountsNsxV:
                 username="administrator@mycompany.com",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.delete(
@@ -173,7 +173,7 @@ class TestCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_nsx_v.with_raw_response.delete(
@@ -186,7 +186,7 @@ class TestCloudAccountsNsxV:
         cloud_accounts_nsx_v = response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.delete(
@@ -201,7 +201,7 @@ class TestCloudAccountsNsxV:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -210,7 +210,7 @@ class TestCloudAccountsNsxV:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_cloud_accounts_nsx_v(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.cloud_accounts_nsx_v(
@@ -223,7 +223,7 @@ class TestCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_cloud_accounts_nsx_v_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.cloud_accounts_nsx_v(
@@ -249,7 +249,7 @@ class TestCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_cloud_accounts_nsx_v(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_nsx_v.with_raw_response.cloud_accounts_nsx_v(
@@ -266,7 +266,7 @@ class TestCloudAccountsNsxV:
         cloud_accounts_nsx_v = response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_cloud_accounts_nsx_v(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.cloud_accounts_nsx_v(
@@ -285,13 +285,13 @@ class TestCloudAccountsNsxV:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_cloud_accounts_nsx_v(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.retrieve_cloud_accounts_nsx_v()
         assert_matches_type(CloudAccountsNsxVRetrieveCloudAccountsNsxVResponse, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_cloud_accounts_nsx_v_with_all_params(self, client: VraIaas) -> None:
         cloud_accounts_nsx_v = client.iaas.api.cloud_accounts_nsx_v.retrieve_cloud_accounts_nsx_v(
@@ -301,7 +301,7 @@ class TestCloudAccountsNsxV:
         )
         assert_matches_type(CloudAccountsNsxVRetrieveCloudAccountsNsxVResponse, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_cloud_accounts_nsx_v(self, client: VraIaas) -> None:
         response = client.iaas.api.cloud_accounts_nsx_v.with_raw_response.retrieve_cloud_accounts_nsx_v()
@@ -311,7 +311,7 @@ class TestCloudAccountsNsxV:
         cloud_accounts_nsx_v = response.parse()
         assert_matches_type(CloudAccountsNsxVRetrieveCloudAccountsNsxVResponse, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_cloud_accounts_nsx_v(self, client: VraIaas) -> None:
         with client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.retrieve_cloud_accounts_nsx_v() as response:
@@ -331,7 +331,7 @@ class TestAsyncCloudAccountsNsxV:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.retrieve(
@@ -339,7 +339,7 @@ class TestAsyncCloudAccountsNsxV:
         )
         assert_matches_type(CloudAccountNsxV, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.retrieve(
@@ -348,7 +348,7 @@ class TestAsyncCloudAccountsNsxV:
         )
         assert_matches_type(CloudAccountNsxV, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_nsx_v.with_raw_response.retrieve(
@@ -360,7 +360,7 @@ class TestAsyncCloudAccountsNsxV:
         cloud_accounts_nsx_v = await response.parse()
         assert_matches_type(CloudAccountNsxV, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.retrieve(
@@ -374,7 +374,7 @@ class TestAsyncCloudAccountsNsxV:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -382,7 +382,7 @@ class TestAsyncCloudAccountsNsxV:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.update(
@@ -396,7 +396,7 @@ class TestAsyncCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.update(
@@ -422,7 +422,7 @@ class TestAsyncCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_nsx_v.with_raw_response.update(
@@ -440,7 +440,7 @@ class TestAsyncCloudAccountsNsxV:
         cloud_accounts_nsx_v = await response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.update(
@@ -460,7 +460,7 @@ class TestAsyncCloudAccountsNsxV:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -474,7 +474,7 @@ class TestAsyncCloudAccountsNsxV:
                 username="administrator@mycompany.com",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.delete(
@@ -483,7 +483,7 @@ class TestAsyncCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_nsx_v.with_raw_response.delete(
@@ -496,7 +496,7 @@ class TestAsyncCloudAccountsNsxV:
         cloud_accounts_nsx_v = await response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.delete(
@@ -511,7 +511,7 @@ class TestAsyncCloudAccountsNsxV:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -520,7 +520,7 @@ class TestAsyncCloudAccountsNsxV:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_cloud_accounts_nsx_v(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.cloud_accounts_nsx_v(
@@ -533,7 +533,7 @@ class TestAsyncCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_cloud_accounts_nsx_v_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.cloud_accounts_nsx_v(
@@ -559,7 +559,7 @@ class TestAsyncCloudAccountsNsxV:
         )
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_cloud_accounts_nsx_v(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_nsx_v.with_raw_response.cloud_accounts_nsx_v(
@@ -576,7 +576,7 @@ class TestAsyncCloudAccountsNsxV:
         cloud_accounts_nsx_v = await response.parse()
         assert_matches_type(RequestTracker, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_cloud_accounts_nsx_v(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.cloud_accounts_nsx_v.with_streaming_response.cloud_accounts_nsx_v(
@@ -595,13 +595,13 @@ class TestAsyncCloudAccountsNsxV:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_cloud_accounts_nsx_v(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.retrieve_cloud_accounts_nsx_v()
         assert_matches_type(CloudAccountsNsxVRetrieveCloudAccountsNsxVResponse, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_cloud_accounts_nsx_v_with_all_params(self, async_client: AsyncVraIaas) -> None:
         cloud_accounts_nsx_v = await async_client.iaas.api.cloud_accounts_nsx_v.retrieve_cloud_accounts_nsx_v(
@@ -611,7 +611,7 @@ class TestAsyncCloudAccountsNsxV:
         )
         assert_matches_type(CloudAccountsNsxVRetrieveCloudAccountsNsxVResponse, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_cloud_accounts_nsx_v(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.cloud_accounts_nsx_v.with_raw_response.retrieve_cloud_accounts_nsx_v()
@@ -621,7 +621,7 @@ class TestAsyncCloudAccountsNsxV:
         cloud_accounts_nsx_v = await response.parse()
         assert_matches_type(CloudAccountsNsxVRetrieveCloudAccountsNsxVResponse, cloud_accounts_nsx_v, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_cloud_accounts_nsx_v(self, async_client: AsyncVraIaas) -> None:
         async with (

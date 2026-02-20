@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestDataCollectors:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         data_collector = client.iaas.api.data_collectors.retrieve(
@@ -29,7 +29,7 @@ class TestDataCollectors:
         )
         assert_matches_type(DataCollector, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         data_collector = client.iaas.api.data_collectors.retrieve(
@@ -38,7 +38,7 @@ class TestDataCollectors:
         )
         assert_matches_type(DataCollector, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.data_collectors.with_raw_response.retrieve(
@@ -50,7 +50,7 @@ class TestDataCollectors:
         data_collector = response.parse()
         assert_matches_type(DataCollector, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.data_collectors.with_streaming_response.retrieve(
@@ -64,7 +64,7 @@ class TestDataCollectors:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -72,7 +72,7 @@ class TestDataCollectors:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         data_collector = client.iaas.api.data_collectors.delete(
@@ -80,7 +80,7 @@ class TestDataCollectors:
         )
         assert data_collector is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete_with_all_params(self, client: VraIaas) -> None:
         data_collector = client.iaas.api.data_collectors.delete(
@@ -89,7 +89,7 @@ class TestDataCollectors:
         )
         assert data_collector is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.data_collectors.with_raw_response.delete(
@@ -101,7 +101,7 @@ class TestDataCollectors:
         data_collector = response.parse()
         assert data_collector is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.data_collectors.with_streaming_response.delete(
@@ -115,7 +115,7 @@ class TestDataCollectors:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -123,13 +123,13 @@ class TestDataCollectors:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_data_collectors(self, client: VraIaas) -> None:
         data_collector = client.iaas.api.data_collectors.data_collectors()
         assert_matches_type(DataCollectorDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_data_collectors_with_all_params(self, client: VraIaas) -> None:
         data_collector = client.iaas.api.data_collectors.data_collectors(
@@ -137,7 +137,7 @@ class TestDataCollectors:
         )
         assert_matches_type(DataCollectorDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_data_collectors(self, client: VraIaas) -> None:
         response = client.iaas.api.data_collectors.with_raw_response.data_collectors()
@@ -147,7 +147,7 @@ class TestDataCollectors:
         data_collector = response.parse()
         assert_matches_type(DataCollectorDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_data_collectors(self, client: VraIaas) -> None:
         with client.iaas.api.data_collectors.with_streaming_response.data_collectors() as response:
@@ -159,13 +159,13 @@ class TestDataCollectors:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_data_collectors(self, client: VraIaas) -> None:
         data_collector = client.iaas.api.data_collectors.retrieve_data_collectors()
         assert_matches_type(DataCollectorRetrieveDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_data_collectors_with_all_params(self, client: VraIaas) -> None:
         data_collector = client.iaas.api.data_collectors.retrieve_data_collectors(
@@ -174,7 +174,7 @@ class TestDataCollectors:
         )
         assert_matches_type(DataCollectorRetrieveDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_data_collectors(self, client: VraIaas) -> None:
         response = client.iaas.api.data_collectors.with_raw_response.retrieve_data_collectors()
@@ -184,7 +184,7 @@ class TestDataCollectors:
         data_collector = response.parse()
         assert_matches_type(DataCollectorRetrieveDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_data_collectors(self, client: VraIaas) -> None:
         with client.iaas.api.data_collectors.with_streaming_response.retrieve_data_collectors() as response:
@@ -202,7 +202,7 @@ class TestAsyncDataCollectors:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         data_collector = await async_client.iaas.api.data_collectors.retrieve(
@@ -210,7 +210,7 @@ class TestAsyncDataCollectors:
         )
         assert_matches_type(DataCollector, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         data_collector = await async_client.iaas.api.data_collectors.retrieve(
@@ -219,7 +219,7 @@ class TestAsyncDataCollectors:
         )
         assert_matches_type(DataCollector, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.data_collectors.with_raw_response.retrieve(
@@ -231,7 +231,7 @@ class TestAsyncDataCollectors:
         data_collector = await response.parse()
         assert_matches_type(DataCollector, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.data_collectors.with_streaming_response.retrieve(
@@ -245,7 +245,7 @@ class TestAsyncDataCollectors:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -253,7 +253,7 @@ class TestAsyncDataCollectors:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         data_collector = await async_client.iaas.api.data_collectors.delete(
@@ -261,7 +261,7 @@ class TestAsyncDataCollectors:
         )
         assert data_collector is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete_with_all_params(self, async_client: AsyncVraIaas) -> None:
         data_collector = await async_client.iaas.api.data_collectors.delete(
@@ -270,7 +270,7 @@ class TestAsyncDataCollectors:
         )
         assert data_collector is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.data_collectors.with_raw_response.delete(
@@ -282,7 +282,7 @@ class TestAsyncDataCollectors:
         data_collector = await response.parse()
         assert data_collector is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.data_collectors.with_streaming_response.delete(
@@ -296,7 +296,7 @@ class TestAsyncDataCollectors:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -304,13 +304,13 @@ class TestAsyncDataCollectors:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_data_collectors(self, async_client: AsyncVraIaas) -> None:
         data_collector = await async_client.iaas.api.data_collectors.data_collectors()
         assert_matches_type(DataCollectorDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_data_collectors_with_all_params(self, async_client: AsyncVraIaas) -> None:
         data_collector = await async_client.iaas.api.data_collectors.data_collectors(
@@ -318,7 +318,7 @@ class TestAsyncDataCollectors:
         )
         assert_matches_type(DataCollectorDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_data_collectors(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.data_collectors.with_raw_response.data_collectors()
@@ -328,7 +328,7 @@ class TestAsyncDataCollectors:
         data_collector = await response.parse()
         assert_matches_type(DataCollectorDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_data_collectors(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.data_collectors.with_streaming_response.data_collectors() as response:
@@ -340,13 +340,13 @@ class TestAsyncDataCollectors:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_data_collectors(self, async_client: AsyncVraIaas) -> None:
         data_collector = await async_client.iaas.api.data_collectors.retrieve_data_collectors()
         assert_matches_type(DataCollectorRetrieveDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_data_collectors_with_all_params(self, async_client: AsyncVraIaas) -> None:
         data_collector = await async_client.iaas.api.data_collectors.retrieve_data_collectors(
@@ -355,7 +355,7 @@ class TestAsyncDataCollectors:
         )
         assert_matches_type(DataCollectorRetrieveDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_data_collectors(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.data_collectors.with_raw_response.retrieve_data_collectors()
@@ -365,7 +365,7 @@ class TestAsyncDataCollectors:
         data_collector = await response.parse()
         assert_matches_type(DataCollectorRetrieveDataCollectorsResponse, data_collector, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_data_collectors(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.data_collectors.with_streaming_response.retrieve_data_collectors() as response:

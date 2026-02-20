@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestUnregisteredIPAddresses:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_release(self, client: VraIaas) -> None:
         unregistered_ip_address = client.iaas.api.network_ip_ranges.unregistered_ip_addresses.release(
@@ -25,7 +25,7 @@ class TestUnregisteredIPAddresses:
         )
         assert_matches_type(RequestTracker, unregistered_ip_address, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_release_with_all_params(self, client: VraIaas) -> None:
         unregistered_ip_address = client.iaas.api.network_ip_ranges.unregistered_ip_addresses.release(
@@ -37,7 +37,7 @@ class TestUnregisteredIPAddresses:
         )
         assert_matches_type(RequestTracker, unregistered_ip_address, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_release(self, client: VraIaas) -> None:
         response = client.iaas.api.network_ip_ranges.unregistered_ip_addresses.with_raw_response.release(
@@ -49,7 +49,7 @@ class TestUnregisteredIPAddresses:
         unregistered_ip_address = response.parse()
         assert_matches_type(RequestTracker, unregistered_ip_address, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_release(self, client: VraIaas) -> None:
         with client.iaas.api.network_ip_ranges.unregistered_ip_addresses.with_streaming_response.release(
@@ -63,7 +63,7 @@ class TestUnregisteredIPAddresses:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_release(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -77,7 +77,7 @@ class TestAsyncUnregisteredIPAddresses:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_release(self, async_client: AsyncVraIaas) -> None:
         unregistered_ip_address = await async_client.iaas.api.network_ip_ranges.unregistered_ip_addresses.release(
@@ -85,7 +85,7 @@ class TestAsyncUnregisteredIPAddresses:
         )
         assert_matches_type(RequestTracker, unregistered_ip_address, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_release_with_all_params(self, async_client: AsyncVraIaas) -> None:
         unregistered_ip_address = await async_client.iaas.api.network_ip_ranges.unregistered_ip_addresses.release(
@@ -97,7 +97,7 @@ class TestAsyncUnregisteredIPAddresses:
         )
         assert_matches_type(RequestTracker, unregistered_ip_address, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_release(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.network_ip_ranges.unregistered_ip_addresses.with_raw_response.release(
@@ -109,7 +109,7 @@ class TestAsyncUnregisteredIPAddresses:
         unregistered_ip_address = await response.parse()
         assert_matches_type(RequestTracker, unregistered_ip_address, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_release(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.network_ip_ranges.unregistered_ip_addresses.with_streaming_response.release(
@@ -123,7 +123,7 @@ class TestAsyncUnregisteredIPAddresses:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_release(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):

@@ -29,7 +29,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestAPI:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve(
@@ -38,7 +38,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve(
@@ -51,7 +51,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve(
@@ -66,7 +66,7 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -75,7 +75,7 @@ class TestAPI:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_login(self, client: VraIaas) -> None:
         api = client.iaas.api.login(
@@ -83,7 +83,7 @@ class TestAPI:
         )
         assert_matches_type(APILoginResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_login_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.login(
@@ -92,7 +92,7 @@ class TestAPI:
         )
         assert_matches_type(APILoginResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_login(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.login(
@@ -104,7 +104,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APILoginResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_login(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.login(
@@ -118,13 +118,13 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_about(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_about()
         assert_matches_type(APIRetrieveAboutResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_about(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_about()
@@ -134,7 +134,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveAboutResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_about(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_about() as response:
@@ -146,13 +146,13 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_event_logs(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_event_logs()
         assert_matches_type(APIRetrieveEventLogsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_event_logs_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_event_logs(
@@ -167,7 +167,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveEventLogsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_event_logs(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_event_logs()
@@ -177,7 +177,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveEventLogsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_event_logs(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_event_logs() as response:
@@ -189,13 +189,13 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_fabric_aws_volume_types(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_fabric_aws_volume_types()
         assert_matches_type(APIRetrieveFabricAwsVolumeTypesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_fabric_aws_volume_types_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_fabric_aws_volume_types(
@@ -203,7 +203,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveFabricAwsVolumeTypesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_fabric_aws_volume_types(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_fabric_aws_volume_types()
@@ -213,7 +213,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveFabricAwsVolumeTypesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_fabric_aws_volume_types(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_fabric_aws_volume_types() as response:
@@ -225,7 +225,7 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_fabric_azure_disk_encryption_sets(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_fabric_azure_disk_encryption_sets(
@@ -233,7 +233,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveFabricAzureDiskEncryptionSetsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_fabric_azure_disk_encryption_sets_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_fabric_azure_disk_encryption_sets(
@@ -242,7 +242,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveFabricAzureDiskEncryptionSetsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_fabric_azure_disk_encryption_sets(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_fabric_azure_disk_encryption_sets(
@@ -254,7 +254,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveFabricAzureDiskEncryptionSetsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_fabric_azure_disk_encryption_sets(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_fabric_azure_disk_encryption_sets(
@@ -268,13 +268,13 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_fabric_flavors(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_fabric_flavors()
         assert_matches_type(APIRetrieveFabricFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_fabric_flavors_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_fabric_flavors(
@@ -283,7 +283,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveFabricFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_fabric_flavors(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_fabric_flavors()
@@ -293,7 +293,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveFabricFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_fabric_flavors(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_fabric_flavors() as response:
@@ -305,13 +305,13 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_flavors(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_flavors()
         assert_matches_type(APIRetrieveFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_flavors_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_flavors(
@@ -320,7 +320,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_flavors(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_flavors()
@@ -330,7 +330,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_flavors(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_flavors() as response:
@@ -342,7 +342,7 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_folders(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_folders(
@@ -350,7 +350,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveFoldersResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_folders_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_folders(
@@ -365,7 +365,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveFoldersResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_folders(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_folders(
@@ -377,7 +377,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveFoldersResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_folders(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_folders(
@@ -391,13 +391,13 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_images(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_images()
         assert_matches_type(APIRetrieveImagesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_images_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_images(
@@ -405,7 +405,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveImagesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_images(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_images()
@@ -415,7 +415,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveImagesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_images(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_images() as response:
@@ -427,7 +427,7 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_request_graph(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_request_graph(
@@ -436,7 +436,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveRequestGraphResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_request_graph_with_all_params(self, client: VraIaas) -> None:
         api = client.iaas.api.retrieve_request_graph(
@@ -446,7 +446,7 @@ class TestAPI:
         )
         assert_matches_type(APIRetrieveRequestGraphResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_request_graph(self, client: VraIaas) -> None:
         response = client.iaas.api.with_raw_response.retrieve_request_graph(
@@ -459,7 +459,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIRetrieveRequestGraphResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_request_graph(self, client: VraIaas) -> None:
         with client.iaas.api.with_streaming_response.retrieve_request_graph(
@@ -480,7 +480,7 @@ class TestAsyncAPI:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve(
@@ -489,7 +489,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve(
@@ -502,7 +502,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve(
@@ -517,7 +517,7 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -526,7 +526,7 @@ class TestAsyncAPI:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_login(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.login(
@@ -534,7 +534,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APILoginResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_login_with_all_params(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.login(
@@ -543,7 +543,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APILoginResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_login(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.login(
@@ -555,7 +555,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APILoginResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_login(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.login(
@@ -569,13 +569,13 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_about(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_about()
         assert_matches_type(APIRetrieveAboutResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_about(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_about()
@@ -585,7 +585,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveAboutResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_about(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve_about() as response:
@@ -597,13 +597,13 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_event_logs(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_event_logs()
         assert_matches_type(APIRetrieveEventLogsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_event_logs_with_all_params(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_event_logs(
@@ -618,7 +618,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveEventLogsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_event_logs(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_event_logs()
@@ -628,7 +628,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveEventLogsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_event_logs(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve_event_logs() as response:
@@ -640,13 +640,13 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_fabric_aws_volume_types(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_fabric_aws_volume_types()
         assert_matches_type(APIRetrieveFabricAwsVolumeTypesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_fabric_aws_volume_types_with_all_params(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_fabric_aws_volume_types(
@@ -654,7 +654,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveFabricAwsVolumeTypesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_fabric_aws_volume_types(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_fabric_aws_volume_types()
@@ -664,7 +664,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveFabricAwsVolumeTypesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_fabric_aws_volume_types(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve_fabric_aws_volume_types() as response:
@@ -676,7 +676,7 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_fabric_azure_disk_encryption_sets(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_fabric_azure_disk_encryption_sets(
@@ -684,7 +684,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveFabricAzureDiskEncryptionSetsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_fabric_azure_disk_encryption_sets_with_all_params(
         self, async_client: AsyncVraIaas
@@ -695,7 +695,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveFabricAzureDiskEncryptionSetsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_fabric_azure_disk_encryption_sets(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_fabric_azure_disk_encryption_sets(
@@ -707,7 +707,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveFabricAzureDiskEncryptionSetsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_fabric_azure_disk_encryption_sets(
         self, async_client: AsyncVraIaas
@@ -723,13 +723,13 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_fabric_flavors(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_fabric_flavors()
         assert_matches_type(APIRetrieveFabricFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_fabric_flavors_with_all_params(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_fabric_flavors(
@@ -738,7 +738,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveFabricFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_fabric_flavors(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_fabric_flavors()
@@ -748,7 +748,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveFabricFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_fabric_flavors(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve_fabric_flavors() as response:
@@ -760,13 +760,13 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_flavors(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_flavors()
         assert_matches_type(APIRetrieveFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_flavors_with_all_params(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_flavors(
@@ -775,7 +775,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_flavors(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_flavors()
@@ -785,7 +785,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveFlavorsResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_flavors(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve_flavors() as response:
@@ -797,7 +797,7 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_folders(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_folders(
@@ -805,7 +805,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveFoldersResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_folders_with_all_params(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_folders(
@@ -820,7 +820,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveFoldersResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_folders(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_folders(
@@ -832,7 +832,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveFoldersResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_folders(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve_folders(
@@ -846,13 +846,13 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_images(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_images()
         assert_matches_type(APIRetrieveImagesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_images_with_all_params(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_images(
@@ -860,7 +860,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveImagesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_images(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_images()
@@ -870,7 +870,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveImagesResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_images(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve_images() as response:
@@ -882,7 +882,7 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_request_graph(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_request_graph(
@@ -891,7 +891,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveRequestGraphResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_request_graph_with_all_params(self, async_client: AsyncVraIaas) -> None:
         api = await async_client.iaas.api.retrieve_request_graph(
@@ -901,7 +901,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIRetrieveRequestGraphResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_request_graph(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.with_raw_response.retrieve_request_graph(
@@ -914,7 +914,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIRetrieveRequestGraphResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_request_graph(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.with_streaming_response.retrieve_request_graph(
