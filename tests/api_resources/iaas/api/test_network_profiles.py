@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestNetworkProfiles:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.retrieve(
@@ -28,7 +28,7 @@ class TestNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.retrieve(
@@ -37,7 +37,7 @@ class TestNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.network_profiles.with_raw_response.retrieve(
@@ -49,7 +49,7 @@ class TestNetworkProfiles:
         network_profile = response.parse()
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.network_profiles.with_streaming_response.retrieve(
@@ -63,7 +63,7 @@ class TestNetworkProfiles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -71,7 +71,7 @@ class TestNetworkProfiles:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.update(
@@ -81,7 +81,7 @@ class TestNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.update(
@@ -116,7 +116,7 @@ class TestNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: VraIaas) -> None:
         response = client.iaas.api.network_profiles.with_raw_response.update(
@@ -130,7 +130,7 @@ class TestNetworkProfiles:
         network_profile = response.parse()
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: VraIaas) -> None:
         with client.iaas.api.network_profiles.with_streaming_response.update(
@@ -146,7 +146,7 @@ class TestNetworkProfiles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -156,7 +156,7 @@ class TestNetworkProfiles:
                 region_id="9.0E49",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.delete(
@@ -164,7 +164,7 @@ class TestNetworkProfiles:
         )
         assert network_profile is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete_with_all_params(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.delete(
@@ -173,7 +173,7 @@ class TestNetworkProfiles:
         )
         assert network_profile is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.network_profiles.with_raw_response.delete(
@@ -185,7 +185,7 @@ class TestNetworkProfiles:
         network_profile = response.parse()
         assert network_profile is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.network_profiles.with_streaming_response.delete(
@@ -199,7 +199,7 @@ class TestNetworkProfiles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -207,7 +207,7 @@ class TestNetworkProfiles:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_network_profiles(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.network_profiles(
@@ -216,7 +216,7 @@ class TestNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_network_profiles_with_all_params(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.network_profiles(
@@ -250,7 +250,7 @@ class TestNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_network_profiles(self, client: VraIaas) -> None:
         response = client.iaas.api.network_profiles.with_raw_response.network_profiles(
@@ -263,7 +263,7 @@ class TestNetworkProfiles:
         network_profile = response.parse()
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_network_profiles(self, client: VraIaas) -> None:
         with client.iaas.api.network_profiles.with_streaming_response.network_profiles(
@@ -278,13 +278,13 @@ class TestNetworkProfiles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_network_profiles(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.retrieve_network_profiles()
         assert_matches_type(NetworkProfileRetrieveNetworkProfilesResponse, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_network_profiles_with_all_params(self, client: VraIaas) -> None:
         network_profile = client.iaas.api.network_profiles.retrieve_network_profiles(
@@ -297,7 +297,7 @@ class TestNetworkProfiles:
         )
         assert_matches_type(NetworkProfileRetrieveNetworkProfilesResponse, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_network_profiles(self, client: VraIaas) -> None:
         response = client.iaas.api.network_profiles.with_raw_response.retrieve_network_profiles()
@@ -307,7 +307,7 @@ class TestNetworkProfiles:
         network_profile = response.parse()
         assert_matches_type(NetworkProfileRetrieveNetworkProfilesResponse, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_network_profiles(self, client: VraIaas) -> None:
         with client.iaas.api.network_profiles.with_streaming_response.retrieve_network_profiles() as response:
@@ -325,7 +325,7 @@ class TestAsyncNetworkProfiles:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.retrieve(
@@ -333,7 +333,7 @@ class TestAsyncNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.retrieve(
@@ -342,7 +342,7 @@ class TestAsyncNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.network_profiles.with_raw_response.retrieve(
@@ -354,7 +354,7 @@ class TestAsyncNetworkProfiles:
         network_profile = await response.parse()
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.network_profiles.with_streaming_response.retrieve(
@@ -368,7 +368,7 @@ class TestAsyncNetworkProfiles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -376,7 +376,7 @@ class TestAsyncNetworkProfiles:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.update(
@@ -386,7 +386,7 @@ class TestAsyncNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.update(
@@ -421,7 +421,7 @@ class TestAsyncNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.network_profiles.with_raw_response.update(
@@ -435,7 +435,7 @@ class TestAsyncNetworkProfiles:
         network_profile = await response.parse()
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.network_profiles.with_streaming_response.update(
@@ -451,7 +451,7 @@ class TestAsyncNetworkProfiles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -461,7 +461,7 @@ class TestAsyncNetworkProfiles:
                 region_id="9.0E49",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.delete(
@@ -469,7 +469,7 @@ class TestAsyncNetworkProfiles:
         )
         assert network_profile is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete_with_all_params(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.delete(
@@ -478,7 +478,7 @@ class TestAsyncNetworkProfiles:
         )
         assert network_profile is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.network_profiles.with_raw_response.delete(
@@ -490,7 +490,7 @@ class TestAsyncNetworkProfiles:
         network_profile = await response.parse()
         assert network_profile is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.network_profiles.with_streaming_response.delete(
@@ -504,7 +504,7 @@ class TestAsyncNetworkProfiles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -512,7 +512,7 @@ class TestAsyncNetworkProfiles:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_network_profiles(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.network_profiles(
@@ -521,7 +521,7 @@ class TestAsyncNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_network_profiles_with_all_params(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.network_profiles(
@@ -555,7 +555,7 @@ class TestAsyncNetworkProfiles:
         )
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_network_profiles(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.network_profiles.with_raw_response.network_profiles(
@@ -568,7 +568,7 @@ class TestAsyncNetworkProfiles:
         network_profile = await response.parse()
         assert_matches_type(NetworkProfile, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_network_profiles(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.network_profiles.with_streaming_response.network_profiles(
@@ -583,13 +583,13 @@ class TestAsyncNetworkProfiles:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_network_profiles(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.retrieve_network_profiles()
         assert_matches_type(NetworkProfileRetrieveNetworkProfilesResponse, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_network_profiles_with_all_params(self, async_client: AsyncVraIaas) -> None:
         network_profile = await async_client.iaas.api.network_profiles.retrieve_network_profiles(
@@ -602,7 +602,7 @@ class TestAsyncNetworkProfiles:
         )
         assert_matches_type(NetworkProfileRetrieveNetworkProfilesResponse, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_network_profiles(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.network_profiles.with_raw_response.retrieve_network_profiles()
@@ -612,7 +612,7 @@ class TestAsyncNetworkProfiles:
         network_profile = await response.parse()
         assert_matches_type(NetworkProfileRetrieveNetworkProfilesResponse, network_profile, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_network_profiles(self, async_client: AsyncVraIaas) -> None:
         async with (

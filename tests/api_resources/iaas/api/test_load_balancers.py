@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestLoadBalancers:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         load_balancer = client.iaas.api.load_balancers.retrieve(
@@ -29,7 +29,7 @@ class TestLoadBalancers:
         )
         assert_matches_type(LoadBalancer, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         load_balancer = client.iaas.api.load_balancers.retrieve(
@@ -38,7 +38,7 @@ class TestLoadBalancers:
         )
         assert_matches_type(LoadBalancer, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.load_balancers.with_raw_response.retrieve(
@@ -50,7 +50,7 @@ class TestLoadBalancers:
         load_balancer = response.parse()
         assert_matches_type(LoadBalancer, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.load_balancers.with_streaming_response.retrieve(
@@ -64,7 +64,7 @@ class TestLoadBalancers:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -72,7 +72,7 @@ class TestLoadBalancers:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         load_balancer = client.iaas.api.load_balancers.delete(
@@ -80,7 +80,7 @@ class TestLoadBalancers:
         )
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete_with_all_params(self, client: VraIaas) -> None:
         load_balancer = client.iaas.api.load_balancers.delete(
@@ -90,7 +90,7 @@ class TestLoadBalancers:
         )
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.load_balancers.with_raw_response.delete(
@@ -102,7 +102,7 @@ class TestLoadBalancers:
         load_balancer = response.parse()
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.load_balancers.with_streaming_response.delete(
@@ -116,7 +116,7 @@ class TestLoadBalancers:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -124,7 +124,7 @@ class TestLoadBalancers:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_load_balancers(self, client: VraIaas) -> None:
         load_balancer = client.iaas.api.load_balancers.load_balancers(
@@ -142,7 +142,7 @@ class TestLoadBalancers:
         )
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_load_balancers_with_all_params(self, client: VraIaas) -> None:
         load_balancer = client.iaas.api.load_balancers.load_balancers(
@@ -201,7 +201,7 @@ class TestLoadBalancers:
         )
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_load_balancers(self, client: VraIaas) -> None:
         response = client.iaas.api.load_balancers.with_raw_response.load_balancers(
@@ -223,7 +223,7 @@ class TestLoadBalancers:
         load_balancer = response.parse()
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_load_balancers(self, client: VraIaas) -> None:
         with client.iaas.api.load_balancers.with_streaming_response.load_balancers(
@@ -247,13 +247,13 @@ class TestLoadBalancers:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_load_balancers(self, client: VraIaas) -> None:
         load_balancer = client.iaas.api.load_balancers.retrieve_load_balancers()
         assert_matches_type(LoadBalancerRetrieveLoadBalancersResponse, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_load_balancers_with_all_params(self, client: VraIaas) -> None:
         load_balancer = client.iaas.api.load_balancers.retrieve_load_balancers(
@@ -261,7 +261,7 @@ class TestLoadBalancers:
         )
         assert_matches_type(LoadBalancerRetrieveLoadBalancersResponse, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_load_balancers(self, client: VraIaas) -> None:
         response = client.iaas.api.load_balancers.with_raw_response.retrieve_load_balancers()
@@ -271,7 +271,7 @@ class TestLoadBalancers:
         load_balancer = response.parse()
         assert_matches_type(LoadBalancerRetrieveLoadBalancersResponse, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_load_balancers(self, client: VraIaas) -> None:
         with client.iaas.api.load_balancers.with_streaming_response.retrieve_load_balancers() as response:
@@ -289,7 +289,7 @@ class TestAsyncLoadBalancers:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         load_balancer = await async_client.iaas.api.load_balancers.retrieve(
@@ -297,7 +297,7 @@ class TestAsyncLoadBalancers:
         )
         assert_matches_type(LoadBalancer, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         load_balancer = await async_client.iaas.api.load_balancers.retrieve(
@@ -306,7 +306,7 @@ class TestAsyncLoadBalancers:
         )
         assert_matches_type(LoadBalancer, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.load_balancers.with_raw_response.retrieve(
@@ -318,7 +318,7 @@ class TestAsyncLoadBalancers:
         load_balancer = await response.parse()
         assert_matches_type(LoadBalancer, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.load_balancers.with_streaming_response.retrieve(
@@ -332,7 +332,7 @@ class TestAsyncLoadBalancers:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -340,7 +340,7 @@ class TestAsyncLoadBalancers:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         load_balancer = await async_client.iaas.api.load_balancers.delete(
@@ -348,7 +348,7 @@ class TestAsyncLoadBalancers:
         )
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete_with_all_params(self, async_client: AsyncVraIaas) -> None:
         load_balancer = await async_client.iaas.api.load_balancers.delete(
@@ -358,7 +358,7 @@ class TestAsyncLoadBalancers:
         )
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.load_balancers.with_raw_response.delete(
@@ -370,7 +370,7 @@ class TestAsyncLoadBalancers:
         load_balancer = await response.parse()
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.load_balancers.with_streaming_response.delete(
@@ -384,7 +384,7 @@ class TestAsyncLoadBalancers:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -392,7 +392,7 @@ class TestAsyncLoadBalancers:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_load_balancers(self, async_client: AsyncVraIaas) -> None:
         load_balancer = await async_client.iaas.api.load_balancers.load_balancers(
@@ -410,7 +410,7 @@ class TestAsyncLoadBalancers:
         )
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_load_balancers_with_all_params(self, async_client: AsyncVraIaas) -> None:
         load_balancer = await async_client.iaas.api.load_balancers.load_balancers(
@@ -469,7 +469,7 @@ class TestAsyncLoadBalancers:
         )
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_load_balancers(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.load_balancers.with_raw_response.load_balancers(
@@ -491,7 +491,7 @@ class TestAsyncLoadBalancers:
         load_balancer = await response.parse()
         assert_matches_type(RequestTracker, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_load_balancers(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.load_balancers.with_streaming_response.load_balancers(
@@ -515,13 +515,13 @@ class TestAsyncLoadBalancers:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_load_balancers(self, async_client: AsyncVraIaas) -> None:
         load_balancer = await async_client.iaas.api.load_balancers.retrieve_load_balancers()
         assert_matches_type(LoadBalancerRetrieveLoadBalancersResponse, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_load_balancers_with_all_params(self, async_client: AsyncVraIaas) -> None:
         load_balancer = await async_client.iaas.api.load_balancers.retrieve_load_balancers(
@@ -529,7 +529,7 @@ class TestAsyncLoadBalancers:
         )
         assert_matches_type(LoadBalancerRetrieveLoadBalancersResponse, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_load_balancers(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.load_balancers.with_raw_response.retrieve_load_balancers()
@@ -539,7 +539,7 @@ class TestAsyncLoadBalancers:
         load_balancer = await response.parse()
         assert_matches_type(LoadBalancerRetrieveLoadBalancersResponse, load_balancer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_load_balancers(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.load_balancers.with_streaming_response.retrieve_load_balancers() as response:

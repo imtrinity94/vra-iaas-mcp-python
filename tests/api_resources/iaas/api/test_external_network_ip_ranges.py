@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestExternalNetworkIPRanges:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         external_network_ip_range = client.iaas.api.external_network_ip_ranges.retrieve(
@@ -28,7 +28,7 @@ class TestExternalNetworkIPRanges:
         )
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         external_network_ip_range = client.iaas.api.external_network_ip_ranges.retrieve(
@@ -37,7 +37,7 @@ class TestExternalNetworkIPRanges:
         )
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.external_network_ip_ranges.with_raw_response.retrieve(
@@ -49,7 +49,7 @@ class TestExternalNetworkIPRanges:
         external_network_ip_range = response.parse()
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.external_network_ip_ranges.with_streaming_response.retrieve(
@@ -63,7 +63,7 @@ class TestExternalNetworkIPRanges:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -71,7 +71,7 @@ class TestExternalNetworkIPRanges:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: VraIaas) -> None:
         external_network_ip_range = client.iaas.api.external_network_ip_ranges.update(
@@ -79,7 +79,7 @@ class TestExternalNetworkIPRanges:
         )
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: VraIaas) -> None:
         external_network_ip_range = client.iaas.api.external_network_ip_ranges.update(
@@ -89,7 +89,7 @@ class TestExternalNetworkIPRanges:
         )
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: VraIaas) -> None:
         response = client.iaas.api.external_network_ip_ranges.with_raw_response.update(
@@ -101,7 +101,7 @@ class TestExternalNetworkIPRanges:
         external_network_ip_range = response.parse()
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: VraIaas) -> None:
         with client.iaas.api.external_network_ip_ranges.with_streaming_response.update(
@@ -115,7 +115,7 @@ class TestExternalNetworkIPRanges:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -123,7 +123,7 @@ class TestExternalNetworkIPRanges:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_external_network_ip_ranges(self, client: VraIaas) -> None:
         external_network_ip_range = client.iaas.api.external_network_ip_ranges.retrieve_external_network_ip_ranges()
@@ -131,7 +131,7 @@ class TestExternalNetworkIPRanges:
             ExternalNetworkIPRangeRetrieveExternalNetworkIPRangesResponse, external_network_ip_range, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_external_network_ip_ranges_with_all_params(self, client: VraIaas) -> None:
         external_network_ip_range = client.iaas.api.external_network_ip_ranges.retrieve_external_network_ip_ranges(
@@ -141,7 +141,7 @@ class TestExternalNetworkIPRanges:
             ExternalNetworkIPRangeRetrieveExternalNetworkIPRangesResponse, external_network_ip_range, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_external_network_ip_ranges(self, client: VraIaas) -> None:
         response = client.iaas.api.external_network_ip_ranges.with_raw_response.retrieve_external_network_ip_ranges()
@@ -153,7 +153,7 @@ class TestExternalNetworkIPRanges:
             ExternalNetworkIPRangeRetrieveExternalNetworkIPRangesResponse, external_network_ip_range, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_external_network_ip_ranges(self, client: VraIaas) -> None:
         with (
@@ -177,7 +177,7 @@ class TestAsyncExternalNetworkIPRanges:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         external_network_ip_range = await async_client.iaas.api.external_network_ip_ranges.retrieve(
@@ -185,7 +185,7 @@ class TestAsyncExternalNetworkIPRanges:
         )
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         external_network_ip_range = await async_client.iaas.api.external_network_ip_ranges.retrieve(
@@ -194,7 +194,7 @@ class TestAsyncExternalNetworkIPRanges:
         )
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.external_network_ip_ranges.with_raw_response.retrieve(
@@ -206,7 +206,7 @@ class TestAsyncExternalNetworkIPRanges:
         external_network_ip_range = await response.parse()
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.external_network_ip_ranges.with_streaming_response.retrieve(
@@ -220,7 +220,7 @@ class TestAsyncExternalNetworkIPRanges:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -228,7 +228,7 @@ class TestAsyncExternalNetworkIPRanges:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncVraIaas) -> None:
         external_network_ip_range = await async_client.iaas.api.external_network_ip_ranges.update(
@@ -236,7 +236,7 @@ class TestAsyncExternalNetworkIPRanges:
         )
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncVraIaas) -> None:
         external_network_ip_range = await async_client.iaas.api.external_network_ip_ranges.update(
@@ -246,7 +246,7 @@ class TestAsyncExternalNetworkIPRanges:
         )
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.external_network_ip_ranges.with_raw_response.update(
@@ -258,7 +258,7 @@ class TestAsyncExternalNetworkIPRanges:
         external_network_ip_range = await response.parse()
         assert_matches_type(ExternalNetworkIPRange, external_network_ip_range, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.external_network_ip_ranges.with_streaming_response.update(
@@ -272,7 +272,7 @@ class TestAsyncExternalNetworkIPRanges:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -280,7 +280,7 @@ class TestAsyncExternalNetworkIPRanges:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_external_network_ip_ranges(self, async_client: AsyncVraIaas) -> None:
         external_network_ip_range = (
@@ -290,7 +290,7 @@ class TestAsyncExternalNetworkIPRanges:
             ExternalNetworkIPRangeRetrieveExternalNetworkIPRangesResponse, external_network_ip_range, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_external_network_ip_ranges_with_all_params(self, async_client: AsyncVraIaas) -> None:
         external_network_ip_range = (
@@ -302,7 +302,7 @@ class TestAsyncExternalNetworkIPRanges:
             ExternalNetworkIPRangeRetrieveExternalNetworkIPRangesResponse, external_network_ip_range, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_external_network_ip_ranges(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.external_network_ip_ranges.with_raw_response.retrieve_external_network_ip_ranges()
@@ -314,7 +314,7 @@ class TestAsyncExternalNetworkIPRanges:
             ExternalNetworkIPRangeRetrieveExternalNetworkIPRangesResponse, external_network_ip_range, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_external_network_ip_ranges(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.external_network_ip_ranges.with_streaming_response.retrieve_external_network_ip_ranges() as response:
