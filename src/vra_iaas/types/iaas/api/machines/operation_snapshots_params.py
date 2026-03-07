@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from typing import Dict, Union
-from typing_extensions import Required, Annotated, TypeAlias, TypedDict
+from typing import Dict
+from typing_extensions import Required, Annotated, TypedDict
 
 from ....._types import SequenceNotStr
 from ....._utils import PropertyInfo
@@ -60,10 +60,7 @@ class Link(TypedDict, total=False):
     hrefs: SequenceNotStr[str]
 
 
-class _LinksTyped(TypedDict, total=False):
+class _Links(TypedDict, total=False, extra_items=Link):  # type: ignore[call-arg]
     """HATEOAS of the entity"""
 
     empty: bool
-
-
-_Links: TypeAlias = Union[_LinksTyped, Dict[str, Link]]
