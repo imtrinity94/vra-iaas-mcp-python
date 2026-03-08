@@ -37,7 +37,7 @@ class TestPackageImport:
             tus_resumable="1.0.0",
             upload_offset="Upload-Offset",
             api_version="apiVersion",
-            body=b"raw file contents",
+            body=b"Example data",
         )
         assert package_import is None
 
@@ -156,7 +156,7 @@ class TestAsyncPackageImport:
             tus_resumable="1.0.0",
             upload_offset="Upload-Offset",
             api_version="apiVersion",
-            body=b"raw file contents",
+            body=b"Example data",
         )
         assert package_import is None
 
