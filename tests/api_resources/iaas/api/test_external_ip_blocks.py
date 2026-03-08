@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestExternalIPBlocks:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         external_ip_block = client.iaas.api.external_ip_blocks.retrieve(
@@ -28,7 +28,7 @@ class TestExternalIPBlocks:
         )
         assert_matches_type(FabricNetwork, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         external_ip_block = client.iaas.api.external_ip_blocks.retrieve(
@@ -37,7 +37,7 @@ class TestExternalIPBlocks:
         )
         assert_matches_type(FabricNetwork, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.external_ip_blocks.with_raw_response.retrieve(
@@ -49,7 +49,7 @@ class TestExternalIPBlocks:
         external_ip_block = response.parse()
         assert_matches_type(FabricNetwork, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.external_ip_blocks.with_streaming_response.retrieve(
@@ -63,7 +63,7 @@ class TestExternalIPBlocks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -71,13 +71,13 @@ class TestExternalIPBlocks:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_external_ip_blocks(self, client: VraIaas) -> None:
         external_ip_block = client.iaas.api.external_ip_blocks.retrieve_external_ip_blocks()
         assert_matches_type(FabricNetworkResult, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_external_ip_blocks_with_all_params(self, client: VraIaas) -> None:
         external_ip_block = client.iaas.api.external_ip_blocks.retrieve_external_ip_blocks(
@@ -85,7 +85,7 @@ class TestExternalIPBlocks:
         )
         assert_matches_type(FabricNetworkResult, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_external_ip_blocks(self, client: VraIaas) -> None:
         response = client.iaas.api.external_ip_blocks.with_raw_response.retrieve_external_ip_blocks()
@@ -95,7 +95,7 @@ class TestExternalIPBlocks:
         external_ip_block = response.parse()
         assert_matches_type(FabricNetworkResult, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_external_ip_blocks(self, client: VraIaas) -> None:
         with client.iaas.api.external_ip_blocks.with_streaming_response.retrieve_external_ip_blocks() as response:
@@ -113,7 +113,7 @@ class TestAsyncExternalIPBlocks:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         external_ip_block = await async_client.iaas.api.external_ip_blocks.retrieve(
@@ -121,7 +121,7 @@ class TestAsyncExternalIPBlocks:
         )
         assert_matches_type(FabricNetwork, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         external_ip_block = await async_client.iaas.api.external_ip_blocks.retrieve(
@@ -130,7 +130,7 @@ class TestAsyncExternalIPBlocks:
         )
         assert_matches_type(FabricNetwork, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.external_ip_blocks.with_raw_response.retrieve(
@@ -142,7 +142,7 @@ class TestAsyncExternalIPBlocks:
         external_ip_block = await response.parse()
         assert_matches_type(FabricNetwork, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.external_ip_blocks.with_streaming_response.retrieve(
@@ -156,7 +156,7 @@ class TestAsyncExternalIPBlocks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -164,13 +164,13 @@ class TestAsyncExternalIPBlocks:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_external_ip_blocks(self, async_client: AsyncVraIaas) -> None:
         external_ip_block = await async_client.iaas.api.external_ip_blocks.retrieve_external_ip_blocks()
         assert_matches_type(FabricNetworkResult, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_external_ip_blocks_with_all_params(self, async_client: AsyncVraIaas) -> None:
         external_ip_block = await async_client.iaas.api.external_ip_blocks.retrieve_external_ip_blocks(
@@ -178,7 +178,7 @@ class TestAsyncExternalIPBlocks:
         )
         assert_matches_type(FabricNetworkResult, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_external_ip_blocks(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.external_ip_blocks.with_raw_response.retrieve_external_ip_blocks()
@@ -188,7 +188,7 @@ class TestAsyncExternalIPBlocks:
         external_ip_block = await response.parse()
         assert_matches_type(FabricNetworkResult, external_ip_block, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_external_ip_blocks(self, async_client: AsyncVraIaas) -> None:
         async with (

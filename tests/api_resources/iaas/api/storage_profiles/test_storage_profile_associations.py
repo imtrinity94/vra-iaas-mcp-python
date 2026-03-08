@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestStorageProfileAssociations:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_storage_profile_associations(self, client: VraIaas) -> None:
         storage_profile_association = (
@@ -34,7 +34,7 @@ class TestStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_storage_profile_associations_with_all_params(self, client: VraIaas) -> None:
         storage_profile_association = (
@@ -51,7 +51,7 @@ class TestStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_storage_profile_associations(self, client: VraIaas) -> None:
         response = client.iaas.api.storage_profiles.storage_profile_associations.with_raw_response.retrieve_storage_profile_associations(
@@ -67,7 +67,7 @@ class TestStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_storage_profile_associations(self, client: VraIaas) -> None:
         with client.iaas.api.storage_profiles.storage_profile_associations.with_streaming_response.retrieve_storage_profile_associations(
@@ -85,7 +85,7 @@ class TestStorageProfileAssociations:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve_storage_profile_associations(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -93,7 +93,7 @@ class TestStorageProfileAssociations:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_storage_profile_associations(self, client: VraIaas) -> None:
         storage_profile_association = (
@@ -119,7 +119,7 @@ class TestStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_storage_profile_associations_with_all_params(self, client: VraIaas) -> None:
         storage_profile_association = (
@@ -146,7 +146,7 @@ class TestStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update_storage_profile_associations(self, client: VraIaas) -> None:
         response = client.iaas.api.storage_profiles.storage_profile_associations.with_raw_response.update_storage_profile_associations(
@@ -174,7 +174,7 @@ class TestStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update_storage_profile_associations(self, client: VraIaas) -> None:
         with client.iaas.api.storage_profiles.storage_profile_associations.with_streaming_response.update_storage_profile_associations(
@@ -204,7 +204,7 @@ class TestStorageProfileAssociations:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update_storage_profile_associations(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -230,7 +230,7 @@ class TestAsyncStorageProfileAssociations:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_storage_profile_associations(self, async_client: AsyncVraIaas) -> None:
         storage_profile_association = await async_client.iaas.api.storage_profiles.storage_profile_associations.retrieve_storage_profile_associations(
@@ -242,7 +242,7 @@ class TestAsyncStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_storage_profile_associations_with_all_params(
         self, async_client: AsyncVraIaas
@@ -259,7 +259,7 @@ class TestAsyncStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_storage_profile_associations(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.storage_profiles.storage_profile_associations.with_raw_response.retrieve_storage_profile_associations(
@@ -275,7 +275,7 @@ class TestAsyncStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_storage_profile_associations(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.storage_profiles.storage_profile_associations.with_streaming_response.retrieve_storage_profile_associations(
@@ -293,7 +293,7 @@ class TestAsyncStorageProfileAssociations:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve_storage_profile_associations(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -301,7 +301,7 @@ class TestAsyncStorageProfileAssociations:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_storage_profile_associations(self, async_client: AsyncVraIaas) -> None:
         storage_profile_association = await async_client.iaas.api.storage_profiles.storage_profile_associations.update_storage_profile_associations(
@@ -325,7 +325,7 @@ class TestAsyncStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_storage_profile_associations_with_all_params(self, async_client: AsyncVraIaas) -> None:
         storage_profile_association = await async_client.iaas.api.storage_profiles.storage_profile_associations.update_storage_profile_associations(
@@ -350,7 +350,7 @@ class TestAsyncStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update_storage_profile_associations(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.storage_profiles.storage_profile_associations.with_raw_response.update_storage_profile_associations(
@@ -378,7 +378,7 @@ class TestAsyncStorageProfileAssociations:
             path=["response"],
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update_storage_profile_associations(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.storage_profiles.storage_profile_associations.with_streaming_response.update_storage_profile_associations(
@@ -408,7 +408,7 @@ class TestAsyncStorageProfileAssociations:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update_storage_profile_associations(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):

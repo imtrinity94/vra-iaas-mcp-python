@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestDisks:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: VraIaas) -> None:
         disk = client.iaas.api.machines.disks.create(
@@ -30,7 +30,7 @@ class TestDisks:
         )
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: VraIaas) -> None:
         disk = client.iaas.api.machines.disks.create(
@@ -48,7 +48,7 @@ class TestDisks:
         )
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: VraIaas) -> None:
         response = client.iaas.api.machines.disks.with_raw_response.create(
@@ -61,7 +61,7 @@ class TestDisks:
         disk = response.parse()
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: VraIaas) -> None:
         with client.iaas.api.machines.disks.with_streaming_response.create(
@@ -76,7 +76,7 @@ class TestDisks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_create(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -85,7 +85,7 @@ class TestDisks:
                 block_device_id="1298765",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         disk = client.iaas.api.machines.disks.retrieve(
@@ -94,7 +94,7 @@ class TestDisks:
         )
         assert_matches_type(BlockDevice, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         disk = client.iaas.api.machines.disks.retrieve(
@@ -104,7 +104,7 @@ class TestDisks:
         )
         assert_matches_type(BlockDevice, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.machines.disks.with_raw_response.retrieve(
@@ -117,7 +117,7 @@ class TestDisks:
         disk = response.parse()
         assert_matches_type(BlockDevice, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.machines.disks.with_streaming_response.retrieve(
@@ -132,7 +132,7 @@ class TestDisks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -147,7 +147,7 @@ class TestDisks:
                 id="id",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: VraIaas) -> None:
         disk = client.iaas.api.machines.disks.list(
@@ -155,7 +155,7 @@ class TestDisks:
         )
         assert_matches_type(BlockDeviceResult, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: VraIaas) -> None:
         disk = client.iaas.api.machines.disks.list(
@@ -164,7 +164,7 @@ class TestDisks:
         )
         assert_matches_type(BlockDeviceResult, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: VraIaas) -> None:
         response = client.iaas.api.machines.disks.with_raw_response.list(
@@ -176,7 +176,7 @@ class TestDisks:
         disk = response.parse()
         assert_matches_type(BlockDeviceResult, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: VraIaas) -> None:
         with client.iaas.api.machines.disks.with_streaming_response.list(
@@ -190,7 +190,7 @@ class TestDisks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_list(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -198,7 +198,7 @@ class TestDisks:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         disk = client.iaas.api.machines.disks.delete(
@@ -207,7 +207,7 @@ class TestDisks:
         )
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete_with_all_params(self, client: VraIaas) -> None:
         disk = client.iaas.api.machines.disks.delete(
@@ -217,7 +217,7 @@ class TestDisks:
         )
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.machines.disks.with_raw_response.delete(
@@ -230,7 +230,7 @@ class TestDisks:
         disk = response.parse()
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.machines.disks.with_streaming_response.delete(
@@ -245,7 +245,7 @@ class TestDisks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -266,7 +266,7 @@ class TestAsyncDisks:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncVraIaas) -> None:
         disk = await async_client.iaas.api.machines.disks.create(
@@ -275,7 +275,7 @@ class TestAsyncDisks:
         )
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncVraIaas) -> None:
         disk = await async_client.iaas.api.machines.disks.create(
@@ -293,7 +293,7 @@ class TestAsyncDisks:
         )
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.machines.disks.with_raw_response.create(
@@ -306,7 +306,7 @@ class TestAsyncDisks:
         disk = await response.parse()
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.machines.disks.with_streaming_response.create(
@@ -321,7 +321,7 @@ class TestAsyncDisks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_create(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -330,7 +330,7 @@ class TestAsyncDisks:
                 block_device_id="1298765",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         disk = await async_client.iaas.api.machines.disks.retrieve(
@@ -339,7 +339,7 @@ class TestAsyncDisks:
         )
         assert_matches_type(BlockDevice, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         disk = await async_client.iaas.api.machines.disks.retrieve(
@@ -349,7 +349,7 @@ class TestAsyncDisks:
         )
         assert_matches_type(BlockDevice, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.machines.disks.with_raw_response.retrieve(
@@ -362,7 +362,7 @@ class TestAsyncDisks:
         disk = await response.parse()
         assert_matches_type(BlockDevice, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.machines.disks.with_streaming_response.retrieve(
@@ -377,7 +377,7 @@ class TestAsyncDisks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -392,7 +392,7 @@ class TestAsyncDisks:
                 id="id",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncVraIaas) -> None:
         disk = await async_client.iaas.api.machines.disks.list(
@@ -400,7 +400,7 @@ class TestAsyncDisks:
         )
         assert_matches_type(BlockDeviceResult, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncVraIaas) -> None:
         disk = await async_client.iaas.api.machines.disks.list(
@@ -409,7 +409,7 @@ class TestAsyncDisks:
         )
         assert_matches_type(BlockDeviceResult, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.machines.disks.with_raw_response.list(
@@ -421,7 +421,7 @@ class TestAsyncDisks:
         disk = await response.parse()
         assert_matches_type(BlockDeviceResult, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.machines.disks.with_streaming_response.list(
@@ -435,7 +435,7 @@ class TestAsyncDisks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_list(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -443,7 +443,7 @@ class TestAsyncDisks:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         disk = await async_client.iaas.api.machines.disks.delete(
@@ -452,7 +452,7 @@ class TestAsyncDisks:
         )
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete_with_all_params(self, async_client: AsyncVraIaas) -> None:
         disk = await async_client.iaas.api.machines.disks.delete(
@@ -462,7 +462,7 @@ class TestAsyncDisks:
         )
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.machines.disks.with_raw_response.delete(
@@ -475,7 +475,7 @@ class TestAsyncDisks:
         disk = await response.parse()
         assert_matches_type(RequestTracker, disk, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.machines.disks.with_streaming_response.delete(
@@ -490,7 +490,7 @@ class TestAsyncDisks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):

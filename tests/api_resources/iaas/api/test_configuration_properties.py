@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestConfigurationProperties:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         configuration_property = client.iaas.api.configuration_properties.retrieve(
@@ -29,7 +29,7 @@ class TestConfigurationProperties:
         )
         assert_matches_type(ConfigurationPropertyResult, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.configuration_properties.with_raw_response.retrieve(
@@ -42,7 +42,7 @@ class TestConfigurationProperties:
         configuration_property = response.parse()
         assert_matches_type(ConfigurationPropertyResult, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.configuration_properties.with_streaming_response.retrieve(
@@ -57,7 +57,7 @@ class TestConfigurationProperties:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -66,7 +66,7 @@ class TestConfigurationProperties:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         configuration_property = client.iaas.api.configuration_properties.delete(
@@ -75,7 +75,7 @@ class TestConfigurationProperties:
         )
         assert_matches_type(ConfigurationProperty, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.configuration_properties.with_raw_response.delete(
@@ -88,7 +88,7 @@ class TestConfigurationProperties:
         configuration_property = response.parse()
         assert_matches_type(ConfigurationProperty, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.configuration_properties.with_streaming_response.delete(
@@ -103,7 +103,7 @@ class TestConfigurationProperties:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -112,7 +112,7 @@ class TestConfigurationProperties:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_configuration_properties(self, client: VraIaas) -> None:
         configuration_property = client.iaas.api.configuration_properties.retrieve_configuration_properties(
@@ -120,7 +120,7 @@ class TestConfigurationProperties:
         )
         assert_matches_type(ConfigurationPropertyResult, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_configuration_properties(self, client: VraIaas) -> None:
         response = client.iaas.api.configuration_properties.with_raw_response.retrieve_configuration_properties(
@@ -132,7 +132,7 @@ class TestConfigurationProperties:
         configuration_property = response.parse()
         assert_matches_type(ConfigurationPropertyResult, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_configuration_properties(self, client: VraIaas) -> None:
         with client.iaas.api.configuration_properties.with_streaming_response.retrieve_configuration_properties(
@@ -146,7 +146,7 @@ class TestConfigurationProperties:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_configuration_properties(self, client: VraIaas) -> None:
         configuration_property = client.iaas.api.configuration_properties.update_configuration_properties(
@@ -156,7 +156,7 @@ class TestConfigurationProperties:
         )
         assert_matches_type(ConfigurationProperty, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update_configuration_properties(self, client: VraIaas) -> None:
         response = client.iaas.api.configuration_properties.with_raw_response.update_configuration_properties(
@@ -170,7 +170,7 @@ class TestConfigurationProperties:
         configuration_property = response.parse()
         assert_matches_type(ConfigurationProperty, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update_configuration_properties(self, client: VraIaas) -> None:
         with client.iaas.api.configuration_properties.with_streaming_response.update_configuration_properties(
@@ -192,7 +192,7 @@ class TestAsyncConfigurationProperties:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         configuration_property = await async_client.iaas.api.configuration_properties.retrieve(
@@ -201,7 +201,7 @@ class TestAsyncConfigurationProperties:
         )
         assert_matches_type(ConfigurationPropertyResult, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.configuration_properties.with_raw_response.retrieve(
@@ -214,7 +214,7 @@ class TestAsyncConfigurationProperties:
         configuration_property = await response.parse()
         assert_matches_type(ConfigurationPropertyResult, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.configuration_properties.with_streaming_response.retrieve(
@@ -229,7 +229,7 @@ class TestAsyncConfigurationProperties:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -238,7 +238,7 @@ class TestAsyncConfigurationProperties:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         configuration_property = await async_client.iaas.api.configuration_properties.delete(
@@ -247,7 +247,7 @@ class TestAsyncConfigurationProperties:
         )
         assert_matches_type(ConfigurationProperty, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.configuration_properties.with_raw_response.delete(
@@ -260,7 +260,7 @@ class TestAsyncConfigurationProperties:
         configuration_property = await response.parse()
         assert_matches_type(ConfigurationProperty, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.configuration_properties.with_streaming_response.delete(
@@ -275,7 +275,7 @@ class TestAsyncConfigurationProperties:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -284,7 +284,7 @@ class TestAsyncConfigurationProperties:
                 api_version="apiVersion",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_configuration_properties(self, async_client: AsyncVraIaas) -> None:
         configuration_property = await async_client.iaas.api.configuration_properties.retrieve_configuration_properties(
@@ -292,7 +292,7 @@ class TestAsyncConfigurationProperties:
         )
         assert_matches_type(ConfigurationPropertyResult, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_configuration_properties(self, async_client: AsyncVraIaas) -> None:
         response = (
@@ -306,7 +306,7 @@ class TestAsyncConfigurationProperties:
         configuration_property = await response.parse()
         assert_matches_type(ConfigurationPropertyResult, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_configuration_properties(self, async_client: AsyncVraIaas) -> None:
         async with (
@@ -322,7 +322,7 @@ class TestAsyncConfigurationProperties:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_configuration_properties(self, async_client: AsyncVraIaas) -> None:
         configuration_property = await async_client.iaas.api.configuration_properties.update_configuration_properties(
@@ -332,7 +332,7 @@ class TestAsyncConfigurationProperties:
         )
         assert_matches_type(ConfigurationProperty, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update_configuration_properties(self, async_client: AsyncVraIaas) -> None:
         response = (
@@ -348,7 +348,7 @@ class TestAsyncConfigurationProperties:
         configuration_property = await response.parse()
         assert_matches_type(ConfigurationProperty, configuration_property, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update_configuration_properties(self, async_client: AsyncVraIaas) -> None:
         async with (

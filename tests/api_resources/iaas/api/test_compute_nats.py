@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestComputeNats:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         compute_nat = client.iaas.api.compute_nats.retrieve(
@@ -29,7 +29,7 @@ class TestComputeNats:
         )
         assert_matches_type(ComputeNat, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         compute_nat = client.iaas.api.compute_nats.retrieve(
@@ -38,7 +38,7 @@ class TestComputeNats:
         )
         assert_matches_type(ComputeNat, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.compute_nats.with_raw_response.retrieve(
@@ -50,7 +50,7 @@ class TestComputeNats:
         compute_nat = response.parse()
         assert_matches_type(ComputeNat, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.compute_nats.with_streaming_response.retrieve(
@@ -64,7 +64,7 @@ class TestComputeNats:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -72,7 +72,7 @@ class TestComputeNats:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: VraIaas) -> None:
         compute_nat = client.iaas.api.compute_nats.delete(
@@ -80,7 +80,7 @@ class TestComputeNats:
         )
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete_with_all_params(self, client: VraIaas) -> None:
         compute_nat = client.iaas.api.compute_nats.delete(
@@ -90,7 +90,7 @@ class TestComputeNats:
         )
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: VraIaas) -> None:
         response = client.iaas.api.compute_nats.with_raw_response.delete(
@@ -102,7 +102,7 @@ class TestComputeNats:
         compute_nat = response.parse()
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: VraIaas) -> None:
         with client.iaas.api.compute_nats.with_streaming_response.delete(
@@ -116,7 +116,7 @@ class TestComputeNats:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -124,7 +124,7 @@ class TestComputeNats:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compute_nats(self, client: VraIaas) -> None:
         compute_nat = client.iaas.api.compute_nats.compute_nats(
@@ -140,7 +140,7 @@ class TestComputeNats:
         )
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compute_nats_with_all_params(self, client: VraIaas) -> None:
         compute_nat = client.iaas.api.compute_nats.compute_nats(
@@ -167,7 +167,7 @@ class TestComputeNats:
         )
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_compute_nats(self, client: VraIaas) -> None:
         response = client.iaas.api.compute_nats.with_raw_response.compute_nats(
@@ -187,7 +187,7 @@ class TestComputeNats:
         compute_nat = response.parse()
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_compute_nats(self, client: VraIaas) -> None:
         with client.iaas.api.compute_nats.with_streaming_response.compute_nats(
@@ -209,13 +209,13 @@ class TestComputeNats:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_compute_nats(self, client: VraIaas) -> None:
         compute_nat = client.iaas.api.compute_nats.retrieve_compute_nats()
         assert_matches_type(ComputeNatRetrieveComputeNatsResponse, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_compute_nats_with_all_params(self, client: VraIaas) -> None:
         compute_nat = client.iaas.api.compute_nats.retrieve_compute_nats(
@@ -223,7 +223,7 @@ class TestComputeNats:
         )
         assert_matches_type(ComputeNatRetrieveComputeNatsResponse, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_compute_nats(self, client: VraIaas) -> None:
         response = client.iaas.api.compute_nats.with_raw_response.retrieve_compute_nats()
@@ -233,7 +233,7 @@ class TestComputeNats:
         compute_nat = response.parse()
         assert_matches_type(ComputeNatRetrieveComputeNatsResponse, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_compute_nats(self, client: VraIaas) -> None:
         with client.iaas.api.compute_nats.with_streaming_response.retrieve_compute_nats() as response:
@@ -251,7 +251,7 @@ class TestAsyncComputeNats:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         compute_nat = await async_client.iaas.api.compute_nats.retrieve(
@@ -259,7 +259,7 @@ class TestAsyncComputeNats:
         )
         assert_matches_type(ComputeNat, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         compute_nat = await async_client.iaas.api.compute_nats.retrieve(
@@ -268,7 +268,7 @@ class TestAsyncComputeNats:
         )
         assert_matches_type(ComputeNat, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.compute_nats.with_raw_response.retrieve(
@@ -280,7 +280,7 @@ class TestAsyncComputeNats:
         compute_nat = await response.parse()
         assert_matches_type(ComputeNat, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.compute_nats.with_streaming_response.retrieve(
@@ -294,7 +294,7 @@ class TestAsyncComputeNats:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -302,7 +302,7 @@ class TestAsyncComputeNats:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncVraIaas) -> None:
         compute_nat = await async_client.iaas.api.compute_nats.delete(
@@ -310,7 +310,7 @@ class TestAsyncComputeNats:
         )
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete_with_all_params(self, async_client: AsyncVraIaas) -> None:
         compute_nat = await async_client.iaas.api.compute_nats.delete(
@@ -320,7 +320,7 @@ class TestAsyncComputeNats:
         )
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.compute_nats.with_raw_response.delete(
@@ -332,7 +332,7 @@ class TestAsyncComputeNats:
         compute_nat = await response.parse()
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.compute_nats.with_streaming_response.delete(
@@ -346,7 +346,7 @@ class TestAsyncComputeNats:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -354,7 +354,7 @@ class TestAsyncComputeNats:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compute_nats(self, async_client: AsyncVraIaas) -> None:
         compute_nat = await async_client.iaas.api.compute_nats.compute_nats(
@@ -370,7 +370,7 @@ class TestAsyncComputeNats:
         )
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compute_nats_with_all_params(self, async_client: AsyncVraIaas) -> None:
         compute_nat = await async_client.iaas.api.compute_nats.compute_nats(
@@ -397,7 +397,7 @@ class TestAsyncComputeNats:
         )
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_compute_nats(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.compute_nats.with_raw_response.compute_nats(
@@ -417,7 +417,7 @@ class TestAsyncComputeNats:
         compute_nat = await response.parse()
         assert_matches_type(RequestTracker, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_compute_nats(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.compute_nats.with_streaming_response.compute_nats(
@@ -439,13 +439,13 @@ class TestAsyncComputeNats:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_compute_nats(self, async_client: AsyncVraIaas) -> None:
         compute_nat = await async_client.iaas.api.compute_nats.retrieve_compute_nats()
         assert_matches_type(ComputeNatRetrieveComputeNatsResponse, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_compute_nats_with_all_params(self, async_client: AsyncVraIaas) -> None:
         compute_nat = await async_client.iaas.api.compute_nats.retrieve_compute_nats(
@@ -453,7 +453,7 @@ class TestAsyncComputeNats:
         )
         assert_matches_type(ComputeNatRetrieveComputeNatsResponse, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_compute_nats(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.compute_nats.with_raw_response.retrieve_compute_nats()
@@ -463,7 +463,7 @@ class TestAsyncComputeNats:
         compute_nat = await response.parse()
         assert_matches_type(ComputeNatRetrieveComputeNatsResponse, compute_nat, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_compute_nats(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.compute_nats.with_streaming_response.retrieve_compute_nats() as response:

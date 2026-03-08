@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestFabricVsphereDatastores:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: VraIaas) -> None:
         fabric_vsphere_datastore = client.iaas.api.fabric_vsphere_datastores.retrieve(
@@ -28,7 +28,7 @@ class TestFabricVsphereDatastores:
         )
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: VraIaas) -> None:
         fabric_vsphere_datastore = client.iaas.api.fabric_vsphere_datastores.retrieve(
@@ -38,7 +38,7 @@ class TestFabricVsphereDatastores:
         )
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: VraIaas) -> None:
         response = client.iaas.api.fabric_vsphere_datastores.with_raw_response.retrieve(
@@ -50,7 +50,7 @@ class TestFabricVsphereDatastores:
         fabric_vsphere_datastore = response.parse()
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: VraIaas) -> None:
         with client.iaas.api.fabric_vsphere_datastores.with_streaming_response.retrieve(
@@ -64,7 +64,7 @@ class TestFabricVsphereDatastores:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -72,7 +72,7 @@ class TestFabricVsphereDatastores:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: VraIaas) -> None:
         fabric_vsphere_datastore = client.iaas.api.fabric_vsphere_datastores.update(
@@ -80,7 +80,7 @@ class TestFabricVsphereDatastores:
         )
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: VraIaas) -> None:
         fabric_vsphere_datastore = client.iaas.api.fabric_vsphere_datastores.update(
@@ -97,7 +97,7 @@ class TestFabricVsphereDatastores:
         )
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: VraIaas) -> None:
         response = client.iaas.api.fabric_vsphere_datastores.with_raw_response.update(
@@ -109,7 +109,7 @@ class TestFabricVsphereDatastores:
         fabric_vsphere_datastore = response.parse()
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: VraIaas) -> None:
         with client.iaas.api.fabric_vsphere_datastores.with_streaming_response.update(
@@ -123,7 +123,7 @@ class TestFabricVsphereDatastores:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update(self, client: VraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -131,7 +131,7 @@ class TestFabricVsphereDatastores:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_fabric_vsphere_datastores(self, client: VraIaas) -> None:
         fabric_vsphere_datastore = client.iaas.api.fabric_vsphere_datastores.retrieve_fabric_vsphere_datastores()
@@ -139,7 +139,7 @@ class TestFabricVsphereDatastores:
             FabricVsphereDatastoreRetrieveFabricVsphereDatastoresResponse, fabric_vsphere_datastore, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_fabric_vsphere_datastores_with_all_params(self, client: VraIaas) -> None:
         fabric_vsphere_datastore = client.iaas.api.fabric_vsphere_datastores.retrieve_fabric_vsphere_datastores(
@@ -154,7 +154,7 @@ class TestFabricVsphereDatastores:
             FabricVsphereDatastoreRetrieveFabricVsphereDatastoresResponse, fabric_vsphere_datastore, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_fabric_vsphere_datastores(self, client: VraIaas) -> None:
         response = client.iaas.api.fabric_vsphere_datastores.with_raw_response.retrieve_fabric_vsphere_datastores()
@@ -166,7 +166,7 @@ class TestFabricVsphereDatastores:
             FabricVsphereDatastoreRetrieveFabricVsphereDatastoresResponse, fabric_vsphere_datastore, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_fabric_vsphere_datastores(self, client: VraIaas) -> None:
         with (
@@ -190,7 +190,7 @@ class TestAsyncFabricVsphereDatastores:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncVraIaas) -> None:
         fabric_vsphere_datastore = await async_client.iaas.api.fabric_vsphere_datastores.retrieve(
@@ -198,7 +198,7 @@ class TestAsyncFabricVsphereDatastores:
         )
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncVraIaas) -> None:
         fabric_vsphere_datastore = await async_client.iaas.api.fabric_vsphere_datastores.retrieve(
@@ -208,7 +208,7 @@ class TestAsyncFabricVsphereDatastores:
         )
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.fabric_vsphere_datastores.with_raw_response.retrieve(
@@ -220,7 +220,7 @@ class TestAsyncFabricVsphereDatastores:
         fabric_vsphere_datastore = await response.parse()
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.fabric_vsphere_datastores.with_streaming_response.retrieve(
@@ -234,7 +234,7 @@ class TestAsyncFabricVsphereDatastores:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -242,7 +242,7 @@ class TestAsyncFabricVsphereDatastores:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncVraIaas) -> None:
         fabric_vsphere_datastore = await async_client.iaas.api.fabric_vsphere_datastores.update(
@@ -250,7 +250,7 @@ class TestAsyncFabricVsphereDatastores:
         )
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncVraIaas) -> None:
         fabric_vsphere_datastore = await async_client.iaas.api.fabric_vsphere_datastores.update(
@@ -267,7 +267,7 @@ class TestAsyncFabricVsphereDatastores:
         )
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncVraIaas) -> None:
         response = await async_client.iaas.api.fabric_vsphere_datastores.with_raw_response.update(
@@ -279,7 +279,7 @@ class TestAsyncFabricVsphereDatastores:
         fabric_vsphere_datastore = await response.parse()
         assert_matches_type(FabricVsphereDatastore, fabric_vsphere_datastore, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncVraIaas) -> None:
         async with async_client.iaas.api.fabric_vsphere_datastores.with_streaming_response.update(
@@ -293,7 +293,7 @@ class TestAsyncFabricVsphereDatastores:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncVraIaas) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
@@ -301,7 +301,7 @@ class TestAsyncFabricVsphereDatastores:
                 id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_fabric_vsphere_datastores(self, async_client: AsyncVraIaas) -> None:
         fabric_vsphere_datastore = (
@@ -311,7 +311,7 @@ class TestAsyncFabricVsphereDatastores:
             FabricVsphereDatastoreRetrieveFabricVsphereDatastoresResponse, fabric_vsphere_datastore, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_fabric_vsphere_datastores_with_all_params(self, async_client: AsyncVraIaas) -> None:
         fabric_vsphere_datastore = (
@@ -328,7 +328,7 @@ class TestAsyncFabricVsphereDatastores:
             FabricVsphereDatastoreRetrieveFabricVsphereDatastoresResponse, fabric_vsphere_datastore, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_fabric_vsphere_datastores(self, async_client: AsyncVraIaas) -> None:
         response = (
@@ -342,7 +342,7 @@ class TestAsyncFabricVsphereDatastores:
             FabricVsphereDatastoreRetrieveFabricVsphereDatastoresResponse, fabric_vsphere_datastore, path=["response"]
         )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_fabric_vsphere_datastores(self, async_client: AsyncVraIaas) -> None:
         async with (
